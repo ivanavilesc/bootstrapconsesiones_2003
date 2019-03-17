@@ -26,11 +26,11 @@
                             <tbody>                        
                                 <tr>
                                     <td>Nombre</td>
-                                    <td><input type="text"> </td>
+                                    <td><input type="text" size="50"> </td>
                                 </tr>
                                 <tr>
                                     <td>Cargo</td>
-                                    <td><input type="text"></td>
+                                    <td><input type="text" size="50"></td>
                                 </tr>
                                 <tr>
                                     <td>Fecha de inicio</td>
@@ -39,6 +39,10 @@
                                 <tr>
                                     <td>Dias totales</td>
                                     <td><input type="number"></td>
+                                </tr>
+                                <tr>
+                                    <td>Comentarios</td>
+                                    <td><textarea class="form-control" id="message-text"></textarea></td>
                                 </tr>
                                 <tr>
                                     <td><button type="submit" class="btn btn-success">Guardar formulario</button></td>
