@@ -42,6 +42,16 @@
                                 <td><input type="text"></td>
                             </tr>
                             <tr>
+                                <td>Radio button</td>
+                                <td> <input type="radio" name="grp-ing1" aria-label="Op1"> Opcion1 &nbsp
+                                <input type="radio" name="grp-ing1" aria-label="Op2"> Opcion 2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Checkbox</td>
+                                <td> <input type="checkbox" aria-label="chk_opc1">&nbsp &nbsp Esto es un checkbox ? </td>
+                            </tr>
+                            <tr>
                                 <td><button type="button" class="btn btn-primary">Guardar cambios</button></td>
                                 <td></td>
                             </tr>

@@ -21,28 +21,28 @@
                     <div class="panel-heading"><h3>Formulario de Vacaciones</h3></div>
 
                     <!-- Table -->
-                    <form action="contenido.php" method="get">
+                    <form action="listar.php" method="get">
                         <table class="table" border="0">                     
                             <tbody>                        
                                 <tr>
                                     <td>Nombre</td>
-                                    <td><input type="text" size="50"> </td>
+                                    <td><input type="text" id="nombre" name="nombre" size="50"> </td>
                                 </tr>
                                 <tr>
                                     <td>Cargo</td>
-                                    <td><input type="text" size="50"></td>
+                                    <td><input type="text" id="cargo" name="cargo" size="50"></td>
                                 </tr>
                                 <tr>
                                     <td>Fecha de inicio</td>
-                                    <td><input type="date"></td>
+                                    <td><input type="date" id="fechaini" name="fechaini"></td>
                                 </tr>
                                 <tr>
                                     <td>Dias totales</td>
-                                    <td><input type="number"></td>
+                                    <td><input type="number" id="diastot" name="diastot"></td>
                                 </tr>
                                 <tr>
                                     <td>Comentarios</td>
-                                    <td><textarea class="form-control" id="message-text"></textarea></td>
+                                    <td><textarea class="form-control" id="message-text" name="comentarios"></textarea></td>
                                 </tr>
                                 <tr>
                                     <td><button type="submit" class="btn btn-success">Guardar formulario</button></td>
