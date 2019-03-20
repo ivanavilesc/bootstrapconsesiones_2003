@@ -14,12 +14,7 @@
         <?php
         
         ?>
-        <div id="contenedor">
-            <div id="titulo"><?php include('header.php');?></div>
-            <!-- Se puede hacer un include dentro de un DIV, mientras se abra un TAG para codigo PHP-->
-            <div id="menu"><?php include('menu.php');?></div>
-            <div id="contenido"></div>
-        </div>
+        
                 
     </body>
 </html>
