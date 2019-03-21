@@ -25,9 +25,13 @@
                     <div class="panel-heading"><h3>Formulario de Vacaciones</h3></div>
 
                     <!-- Table -->
-                    <form action="listar.php" method="get">
+                    <form class="vacaciones form-horizontal" action="recepcionvacaciones.php" method="post">
                         <table class="table" border="0">                     
-                            <tbody>                        
+                            <tbody>
+                                <tr>
+                                    <td>RUT</td>
+                                    <td><input type="text" id="nombre" name="rut" size="50"> </td>
+                                </tr>
                                 <tr>
                                     <td>Nombre</td>
                                     <td><input type="text" id="nombre" name="nombre" size="50"> </td>
@@ -60,7 +64,28 @@
             </div>
         </div>
 
+         <pre>
+        <?php
+        
+        if(isset($_SESSION["aVacaciones"])){
+            $arrVacaciones=$_SESSION["aVacaciones"];    
+        }
+        foreach($arrVacaciones as $vac){
+            var_dump($_POST);
+        }        
+        var_dump($_SESSION["regvacacion"]);
+        ?>
+</pre>
+        
     </body>
+    
+    <script>
+        $("#subsolicitud").show();
+        $("#subsolicitud").addClass("active");
+        $("#subsolicitud").css("display","block");
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
+    
 </html>
 
 
