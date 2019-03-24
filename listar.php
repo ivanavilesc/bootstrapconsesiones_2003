@@ -1,8 +1,9 @@
 
 <?php
-include('./frame.php');
+include('./classes/Vacaciones.php'); 
 include('./lib/constantes.php');
-include('./classes/Vacaciones.php');
+include('./frame.php');
+
 ?>
 
 <html>
@@ -13,16 +14,15 @@ include('./classes/Vacaciones.php');
             <li><a href="index.php">Inicio</a></li>            
             <li class="active">Listar</li>
         </ol>
-        <?php
-        
-        ?>
-        
+
         <div id="contenedor">
-            <div id="titulo"><?php include('header.php');?></div>
+            
+            <div id="titulo"><?php include('./header.php'); ?></div>
             <!-- Se puede hacer un include dentro de un DIV, mientras se abra un TAG para codigo PHP-->
-            <div id="menu"><?php include('menu.php');?></div>
+            <div id="menu"><?php include('./menu.php'); ?></div>
             <div id="contenido">
-                <table class="table">
+                <h2>Listado de Vacaciones</h2>
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Rut</th>
@@ -34,34 +34,33 @@ include('./classes/Vacaciones.php');
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
+                        <?php
+                        if (isset($_SESSION["aVacaciones"])) {
+                            $arrVacaciones = $_SESSION["aVacaciones"];
+                            foreach ($arrVacaciones as $objVacacion) {
+                                echo "<tr>";
+                                echo "<td>" . $objVacacion->getRut() . "</td>";
+                                echo "<td>" . $objVacacion->getNombre() . "</td>";
+                                echo "<td>" . $objVacacion->getCargo() . "</td>";
+                                echo "<td>" . $objVacacion->getFecinicio() . "</td>";
+                                echo "<td>" . $objVacacion->getDias() . "</td>";
+                                echo "<td>" . $objVacacion->getComentario() . "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                                echo "<div class='alert alert-warning' role='alert'>
+                                        No hay elementos en el arreglo !
+                                </div>";
+                        }
                         
+                        ?>
+                       
                     </tbody>
                 </table>
-                    
-                
-            </div>
+
+            </div> 
+
         </div>
-        <pre>
-            <?php
-        var_dump($_SESSION["regvacacion"]);
-        ?>
-</pre>
+
     </body>
 </html>
-
-
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-

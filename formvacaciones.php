@@ -1,18 +1,17 @@
 <?php  
+include('./classes/Vacaciones.php');
+include('./frame.php');
+include('./lib/constantes.php');
 
 ?>
 
 <html>
     <head>
-        <meta charset="UTF-8">
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <link href="css/estiloprincipal.css" rel="stylesheet" type="text/css"/>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+       
     </head>
     <body>
         <ol class="breadcrumb">
-            <li><a href="index.php">Inicio</a></li>            
+            <li><a href="<?=URLBASE;?>index.php">Inicio</a></li>            
             <li class="active">Formulario vacaciones</li>
         </ol>
         <div id="contenedor">
@@ -25,12 +24,12 @@
                     <div class="panel-heading"><h3>Formulario de Vacaciones</h3></div>
 
                     <!-- Table -->
-                    <form class="vacaciones form-horizontal" action="recepcionvacaciones.php" method="post">
+                    <form class="vacaciones form-horizontal" action="<?=URLBASE;?>lib/recepcionvacaciones.php" method="post">
                         <table class="table" border="0">                     
                             <tbody>
                                 <tr>
                                     <td>RUT</td>
-                                    <td><input type="text" id="nombre" name="rut" size="50"> </td>
+                                    <td><input type="text" id="rut" name="rut" size="50"> </td>
                                 </tr>
                                 <tr>
                                     <td>Nombre</td>
@@ -42,15 +41,16 @@
                                 </tr>
                                 <tr>
                                     <td>Fecha de inicio</td>
-                                    <td><input type="date" id="fechaini" name="fechaini"></td>
+                                    <td><input type="text" id="fechaini" name="fechaini"></td>
                                 </tr>
                                 <tr>
                                     <td>Dias totales</td>
-                                    <td><input type="number" id="diastot" name="diastot"></td>
+                                    <td><input type="text" id="diastotales" name="diastotales"></td>
                                 </tr>
                                 <tr>
                                     <td>Comentarios</td>
-                                    <td><textarea class="form-control" id="message-text" name="comentarios"></textarea></td>
+                                    <td><textarea class="form-control" id="comentarios" name="comentarios"></textarea></td>
+                                    <!--<td><textarea class="form-control" id="message-text" name="comentarios"></textarea></td> -->
                                 </tr>
                                 <tr>
                                     <td><button type="submit" class="btn btn-success">Guardar formulario</button></td>
@@ -64,18 +64,30 @@
             </div>
         </div>
 
-         <pre>
+        <pre>
         <?php
+            echo "<pre>";
+            var_dump($_SESSION["aVacaciones"]);
+            echo "</pre>";
+            /*
+            if(isset($_SESSION["aVacaciones"])){
+                $arrVacaciones=$_SESSION["aVacaciones"];    
+            }
+            foreach($arrVacaciones as $vac){
+                var_dump($_POST);
+            }        
+            var_dump($_SESSION["regvacacion"]);
         
-        if(isset($_SESSION["aVacaciones"])){
-            $arrVacaciones=$_SESSION["aVacaciones"];    
-        }
-        foreach($arrVacaciones as $vac){
-            var_dump($_POST);
-        }        
-        var_dump($_SESSION["regvacacion"]);
+             * 
+             */
+            foreach ($_SESSION["aVacaciones"] as $key => $oVacacion) {
+                if ($oVacacion->getRut()=="3"){
+                    unset($_SESSION["aVacaciones"][$key]);
+                }
+            }
         ?>
-</pre>
+             
+        </pre>
         
     </body>
     
@@ -87,6 +99,3 @@
     </script>
     
 </html>
-
-
-<?php

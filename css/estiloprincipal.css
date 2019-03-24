@@ -40,3 +40,11 @@ a:hover{
    float: left;
    background: snow;
 }
+
+#logout{
+    right   :1000px;
+    top     :10px;
+    width   :120px;
+    float   :right;
+    position:absolute;
+}

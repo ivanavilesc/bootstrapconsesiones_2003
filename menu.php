@@ -1,10 +1,10 @@
-<ul class="list-group">
-    
-    <a href="index.php" class="list-group-item "> <span class="fa fa-home"></span> Ir al home </a>
-    <a href="contenido.php" class="list-group-item "> <span class="fa fa-book"></span> Contenido </a>
-    <a href="formvacaciones.php" class="list-group-item "> <span class="fa fa-chevron-right"></span>  Formulario Vacaciones </a>
-    <a href="listar.php" class="list-group-item "> Listar </a>   
-    <a href="#" class="list-group-item "> Opción 4 </a>          
+<ul class="list-group">    
+    <a href="<?=URLBASE;?>index.php" class="list-group-item "> <span class="fa fa-home"></span> Ir al home </a>
+    <a href="<?=URLBASE;?>contenido.php" class="list-group-item "> <span class="fa fa-book"></span> Contenido </a>
+    <a href="<?=URLBASE;?>formvacaciones.php" class="list-group-item "> <span class="fa fa-chevron-right"></span> Formulario Vacaciones </a>
+    <a href="listar.php" class="list-group-item "><span class="fa fa-list"></span> Listar </a>   
+    <a href="<?=URLBASE;?>elimina.php" class="list-group-item "><span class="fa fa-trash"></span> Elimina </a>
+</ul>
     <!--
     
     Boton MODAL
@@ -30,4 +30,4 @@
     </div>
     -->
     
-</ul>
+
