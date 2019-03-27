@@ -4,6 +4,7 @@
     <a href="<?=URLBASE;?>formvacaciones.php" class="list-group-item "> <span class="fa fa-chevron-right"></span> Formulario Vacaciones </a>
     <a href="listar.php" class="list-group-item "><span class="fa fa-list"></span> Listar </a>   
     <a href="<?=URLBASE;?>elimina.php" class="list-group-item "><span class="fa fa-trash"></span> Elimina </a>
+    <a href="<?=URLBASE;?>ejemplosjquery.php" class="list-group-item "><span class="fa fa-codepen"></span> JQuery </a>    
 </ul>
     <!--
     
